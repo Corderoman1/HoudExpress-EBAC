@@ -1,0 +1,334 @@
+body{
+    font-family: $fontFamili;
+    a{
+        text-decoration: none;
+    }
+
+
+}
+
+
+.header{
+    background-image: $bgBanner;
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 100vh;
+    &__iLigth{
+        width: 240px;
+    }
+    &__nav{
+        @include flex (row, 0, nowrap);
+        justify-content: space-between;
+        align-items: center;
+        @include media(60rem){
+            @include flex (column, 0, wrap);
+            
+        }
+        @include media(35rem){
+            @include flex (row, 0, nowrap);
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        
+    }
+    &__hamIcon{
+        display: none;
+        color: aqua;
+        cursor: pointer;
+        @include hover{
+            &:hover{
+                color: #fff;
+            }
+        }
+        @include media(35rem){
+            display: block
+        }
+    }
+    &__ul{
+        @include flex (row, 40px, nowrap);
+        justify-content: space-between;
+        transition: all .5s ease;
+        border-radius: 10px;
+        @include media(35rem){
+            display: block;
+            position: fixed;
+            top: 60px;
+            right: -800px;
+            width: 100%;
+            text-align: center;
+            &--show{
+                right:0;
+            }
+        }
+
+        
+    }
+
+    &__a{
+        color: aqua;
+        transition: all .2s ease;
+        @include fontsize(10px,1vw,1.1vw);
+        @include media(35rem){
+            display: block;
+            background-color: rgba(55, 55, 55, 0.8);
+            width: 100%;
+            text-align: center;
+            height: 40px;
+            padding-top: 10px;
+            box-sizing: border-box;
+        }
+        
+        @include hover{
+            &:hover{
+                color: white;
+                transform: scale(1.1);
+                border: 2px solid #fff;
+            }
+        }
+    }
+}
+
+.titleSlogan{
+    height: 80vh;
+    @include flex (row, 40px, nowrap);
+    align-items: center;
+    @include media(42rem){
+        @include flex (column, 40px, nowrap);
+        justify-content: center;
+    }
+    
+    &__flex{
+        width: 50%;
+        @include media(42rem){
+            @include flex (column, 0px, nowrap);
+            width: 100%;
+        }
+    }
+    &__title{
+        color: aqua;
+        font-size: clamp(20px,4vw,4.5vw);
+        margin-bottom: 20px;
+        
+    }
+    &__slogan{
+        color: white;
+        font-size: clamp(16px,1.5vw,2vw);
+    }
+    &__img{
+        width: 50%;
+        
+    }
+}
+
+.registroDeGuias{
+    background-image: url(../img/wave-haikei.svg);
+    background-size: cover;
+    background-position: center center;
+    border: 1px solid #0066FF;
+    &--night{
+        background-image: url(../img/wave-haikeinight.svg);
+        background-size: cover;
+        background-position: center center;
+        border: 1px solid #0066ff00;
+    }
+    &__title{
+        text-align: center;
+        margin-top: 20px;
+        color: #fff;
+        text-shadow: 1px 1px 10px #000;
+        font-size: clamp(15px,2vw,2.5vw);
+    }
+    &__flex{
+        @include flex (row, 40px, nowrap);
+        
+    }
+    &__img{
+        width: 50%;
+        height: 600px;
+        @include media(60rem){
+            display: none;
+        }
+    }
+    &__form{
+        width: 50%;
+        border: 2px solid #fff;
+        margin: 40px 0;
+        box-sizing: border-box;
+        padding: 10px;
+        border-radius: 10px;
+        @include media(60rem){
+            width: 90%;
+            margin: 0 auto;
+        }
+    }
+
+    &__label{
+        color: #fff;
+        display: block;
+    }
+    &__input{
+        display: block;
+        width: 95%;
+        height: 40px;
+        border-radius: 10px;
+        box-sizing: border-box;
+        padding: 0 10px 0 20px;
+        margin: 2px auto 10px auto;
+        &::placeholder{
+            color: #999;
+            opacity: .5;
+
+        }
+        &Submit{
+            margin: 40px auto 0 auto;
+        }
+
+    }
+}
+
+.generalStatus{
+    background: #0066FF;
+    background: linear-gradient(0deg, rgba(0, 102, 255, 1) 0%, rgba(230, 204, 204, 1) 51%, rgba(0, 102, 255, 1) 100%);
+    box-sizing: border-box;
+    border: .1px dotted #0066FF;
+    &__flex{
+        @include flex (row, 0, wrap);
+        margin: 40px auto;
+        justify-content: space-around;
+        
+    }
+    &__cart{
+        width: 300px;
+        height: 300px;
+        border: 2px solid white;
+        border-radius: 10px;
+        box-sizing: border-box;
+        text-align: center;
+        @include flex (column, 50px, wrap);
+        justify-content: center;
+        box-shadow: 1px 1px 20px #fff;
+        
+
+    }
+    &__cartTitle{
+        @include fontsize(30px,2vw,2.1vw);
+        color: #fff;
+        text-shadow: 1px 1px 10px #000000;
+        
+    }
+    &__cartNumber{
+        @include fontsize(50px,3vw,3.1vw);
+        color: #0066FF;
+        text-shadow: 1px 1px 10px #000000;
+    }
+
+
+}
+.tableGuides{
+    background: url(../img/wave-haikenight-backwards.svg);
+    background-size: cover;
+    background-position: center center;
+    box-sizing: border-box;
+    border: 1px solid #0066ff00;
+}
+
+.table{
+    width: 100%;
+    margin-top: 50px;
+    text-align: center;
+    
+
+    &__trthead{
+        background-color: #0066FF;
+        color: white;
+        border: 2px solid #000;
+    }
+    &__thead{
+        border: 2px solid #000;
+        height: 40px;
+        box-sizing: border-box;
+        padding-top: 15px;
+    }
+    &__tbodyTd{
+        border: 2px solid #000;
+        height: 40px;
+        box-sizing: border-box;
+        padding-top: 10px;
+        &Status{
+            display: block;
+            width: 90%;
+            margin: 0 auto 10px auto;
+        }
+        &Delete{
+            display: inline-block;
+            width: 30px;
+            height: 30px;
+            padding-top: 2px;
+            box-sizing: border-box;
+            margin-bottom: 2px;
+            cursor: pointer;
+            @include hover{
+                &:hover{
+                    border: 1px solid #fff;
+                    
+                }
+            }
+        }
+        &HIstory{
+            display: inline-block;
+            width: 30px;
+            height: 30px;
+            padding-top: 2px;
+            box-sizing: border-box;
+            margin-bottom: 2px;
+            cursor: pointer;
+            @include hover{
+                &:hover{
+                    border: 1px solid #fff;
+                    
+                }
+            }
+        }
+    }
+    &__btn{
+        margin: 40px auto 60px auto;
+    }
+}
+
+.footer{
+    background-color: #2a5063;
+    &__derechos{
+        color: #fff
+    }
+
+    &__flex{
+        @include flex (row, 0, wrap);
+        justify-content: space-around;
+        @include media(40rem){
+            @include flex (column, 40px, nowrap);
+            justify-content: center
+            
+            
+        }
+        
+    }
+    &__contactos{
+        @include flex (column, 0, wrap);
+        align-items: flex-end;
+        @include media(40rem){
+            align-items: flex-start;
+
+            
+        }
+        
+    }
+    &__links{
+        text-decoration: none;
+        color: #fff;
+    }
+    &__contactos{
+        text-decoration: none;
+        color: #fff;
+    }
+}

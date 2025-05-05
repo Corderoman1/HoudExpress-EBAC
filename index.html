@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="img/logoAzulBlancoHE.png" type="image/x-icon">
+    <link rel="stylesheet" href="css/reset.css">
+     <link rel="stylesheet" href="/css/main.css">
+     <script src="/js/functions.js" async></script>
+    <title>Hound Express</title>
+</head>
+<body>
+    
+    <header class="header ">
+        <section class="container">
+                <nav class="header__nav">
+                    <i class="header__iLigth"><img src="img/logo-Hound_Express-bg-white.png" alt="" class="header__imgLogoDia"></i>
+                    <!-- <i class="header__iDark"><img src="img/logoAzulBlancoHE.png" alt="" class="header__imgLogoNoche"></i> -->
+                    <i class="header__hamIcon header__hamIcon--show" for="showMenu"><svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" viewBox="0 0 16 16">
+                        <path fill-rule="evenodd" d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5"/>
+                    </svg></i>
+                    <ul class="header__ul">
+                        <li class="header__li">
+                            <a href="#" class="header__a">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-down-circle" viewBox="0 0 16 16">
+                                    <path fill-rule="evenodd" d="M1 8a7 7 0 1 0 14 0A7 7 0 0 0 1 8m15 0A8 8 0 1 1 0 8a8 8 0 0 1 16 0M8.5 4.5a.5.5 0 0 0-1 0v5.793L5.354 8.146a.5.5 0 1 0-.708.708l3 3a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 10.293z"/>
+                                </svg>Inicio</a>
+                            </li>
+                            <li class="header__li">
+                                <a href="#Registro de guias" class="header__a">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-person-lines-fill" viewBox="0 0 16 16">
+                                        <path d="M6 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6m-5 6s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1zM11 3.5a.5.5 0 0 1 .5-.5h4a.5.5 0 0 1 0 1h-4a.5.5 0 0 1-.5-.5m.5 2.5a.5.5 0 0 0 0 1h4a.5.5 0 0 0 0-1zm2 3a.5.5 0 0 0 0 1h2a.5.5 0 0 0 0-1zm0 3a.5.5 0 0 0 0 1h2a.5.5 0 0 0 0-1z"/>
+                                    </svg>
+                                    Registro de Guías
+                                </a>
+                            </li>
+                            <li class="header__li">
+                                <a href="#Estado General" class="header__a">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-card-checklist" viewBox="0 0 16 16">
+                                        <path d="M14.5 3a.5.5 0 0 1 .5.5v9a.5.5 0 0 1-.5.5h-13a.5.5 0 0 1-.5-.5v-9a.5.5 0 0 1 .5-.5zm-13-1A1.5 1.5 0 0 0 0 3.5v9A1.5 1.5 0 0 0 1.5 14h13a1.5 1.5 0 0 0 1.5-1.5v-9A1.5 1.5 0 0 0 14.5 2z"/>
+                                        <path d="M7 5.5a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 0 1h-5a.5.5 0 0 1-.5-.5m-1.496-.854a.5.5 0 0 1 0 .708l-1.5 1.5a.5.5 0 0 1-.708 0l-.5-.5a.5.5 0 1 1 .708-.708l.146.147 1.146-1.147a.5.5 0 0 1 .708 0M7 9.5a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 0 1h-5a.5.5 0 0 1-.5-.5m-1.496-.854a.5.5 0 0 1 0 .708l-1.5 1.5a.5.5 0 0 1-.708 0l-.5-.5a.5.5 0 0 1 .708-.708l.146.147 1.146-1.147a.5.5 0 0 1 .708 0"/>
+                                    </svg>
+                                    Estado General
+                                </a>
+                            </li>
+                            <li class="header__li">
+                                <a href="#lista de guias" class="header__a">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-list" viewBox="0 0 16 16">
+                                        <path fill-rule="evenodd" d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5"/>
+                                    </svg>
+                                    Lista de Guías
+                                </a>
+                            </li>
+                            <li class="header__li">
+                                <a href="#" class="header__a">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search-heart" viewBox="0 0 16 16">
+                                        <path d="M6.5 4.482c1.664-1.673 5.825 1.254 0 5.018-5.825-3.764-1.664-6.69 0-5.018"/>
+                                        <path d="M13 6.5a6.47 6.47 0 0 1-1.258 3.844q.06.044.115.098l3.85 3.85a1 1 0 0 1-1.414 1.415l-3.85-3.85a1 1 0 0 1-.1-.115h.002A6.5 6.5 0 1 1 13 6.5M6.5 12a5.5 5.5 0 1 0 0-11 5.5 5.5 0 0 0 0 11"/>
+                                    </svg>
+                                    Buscar Guías
+                                </a>
+                            </li>
+                            <li class="header__li">
+                                <a href="#" class="header__a">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-clock-history" viewBox="0 0 16 16">
+                                        <path d="M8.515 1.019A7 7 0 0 0 8 1V0a8 8 0 0 1 .589.022zm2.004.45a7 7 0 0 0-.985-.299l.219-.976q.576.129 1.126.342zm1.37.71a7 7 0 0 0-.439-.27l.493-.87a8 8 0 0 1 .979.654l-.615.789a7 7 0 0 0-.418-.302zm1.834 1.79a7 7 0 0 0-.653-.796l.724-.69q.406.429.747.91zm.744 1.352a7 7 0 0 0-.214-.468l.893-.45a8 8 0 0 1 .45 1.088l-.95.313a7 7 0 0 0-.179-.483m.53 2.507a7 7 0 0 0-.1-1.025l.985-.17q.1.58.116 1.17zm-.131 1.538q.05-.254.081-.51l.993.123a8 8 0 0 1-.23 1.155l-.964-.267q.069-.247.12-.501m-.952 2.379q.276-.436.486-.908l.914.405q-.24.54-.555 1.038zm-.964 1.205q.183-.183.35-.378l.758.653a8 8 0 0 1-.401.432z"/>
+                                        <path d="M8 1a7 7 0 1 0 4.95 11.95l.707.707A8.001 8.001 0 1 1 8 0z"/>
+                                        <path d="M7.5 3a.5.5 0 0 1 .5.5v5.21l3.248 1.856a.5.5 0 0 1-.496.868l-3.5-2A.5.5 0 0 1 7 9V3.5a.5.5 0 0 1 .5-.5"/>
+                                    </svg>
+                                    Historial de Guías
+                                </a>
+                            </li>
+                            
+                        </ul>
+                    </nav>
+            <article class="titleSlogan">
+                <div class="titleSlogan__flex">    
+                    <h1 class="titleSlogan__title">Con nosotros tu tienes el control de tu paqueteria</h1>
+                    <p class="titleSlogan__slogan">Expertos en logística y comercio internacional en México y el mundo
+                        Usamos tecnología de última generación para que tengas el control de tu operación en tiempo real.
+                        </p>
+                </div>
+                <img src="img/header__img.png" alt="" class="titleSlogan__img">
+
+            </article>
+        </section>
+    </header>
+    <main class="main">
+        <section class="registroDeGuias registroDeGuias--night">
+            <div class="container">
+                <h2 class="registroDeGuias__title">Registro de guias</h2>
+                <div class="registroDeGuias__flex">
+
+                    <form action="" class="registroDeGuias__form" id="Registro de guias">
+                        <label for="Numero de Guia" class="registroDeGuias__label">Numero de Guia <p class="status">Error</p> </label>
+                        <input type="text" id="Numero de Guia" name="Numero de guia" placeholder="Ingresa tu numero de Guia" class="registroDeGuias__input">
+                        <label for="origen" class="registroDeGuias__label">Origen<p class="status">Error</p></label>
+                        <input type="text" class="registroDeGuias__input" name="origen" id="origen" placeholder="Ejemplo: direccion #999">
+                        <label for="destino" class="registroDeGuias__label">Destino<p class="status">Error</p></label>
+                        <input type="text" class="registroDeGuias__input" name="destino" id="destino" placeholder="Ejemplo: direccion #999">
+                        <label for="destinatario" class="registroDeGuias__label">Destinatario<p class="status">Error</p></label>
+                        <input type="text" class="registroDeGuias__input" name="destinatario" id="destinatario" placeholder="Nompre Apellido">
+                        <label for="fecha De Creacion" class="registroDeGuias__label">Fecha De Creacion <p class="status">Error</p></label>
+                        <input type="date" name="fecha De Creacion" id="fecha De Creacion" class="registroDeGuias__input">
+                        <label for="estado inicial" class="registroDeGuias__label">Estado Inicial<p class="status">Error</p></label>
+                        <select name="estado inicial" id="estado inicial" class="registroDeGuias__input">
+                            <option value="0" class="registroDeGuias__inputOption">--Selecciona una opcion--</option>
+                            <option value="1" class="registroDeGuias__inputOption">Pendiente</option>
+                            <option value="2" class="registroDeGuias__inputOption">En tránsito</option>
+                            <option value="3" class="registroDeGuias__inputOption">Entregado</option>
+                        </select>
+                        <input type="submit" name="eviar" id="enviar" value="Enviar" class="registroDeGuias__inputSubmit btn-normal">
+                        
+                    </form>
+                    <img src="/img/form.png" alt="" class="registroDeGuias__img">
+                </div>
+            </div>
+            <!-- <img src="img/bg-form.jpg" alt="" class="registroDeGuias__img"> -->
+        </section>
+
+        <section class="generalStatus" id="Estado General">
+            <div class="container">
+                <div class="generalStatus__flex">
+                    <article class="generalStatus__cart">
+                        <h2 class="generalStatus__cartTitle">Guías activas:</h2>
+                        <p class="generalStatus__cartNumber">0</p>
+                    </article>
+                    <article class="generalStatus__cart">
+                        <h2 class="generalStatus__cartTitle">Guías en tránsito:</h2>
+                        <p class="generalStatus__cartNumber">0</p>
+                    </article>
+                    <article class="generalStatus__cart">
+                        <h2 class="generalStatus__cartTitle">Guías entregadas:</h2>
+                        <p class="generalStatus__cartNumber">0</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section class="tableGuides">
+            <div class="container">
+                <table class="table">
+                    <thead class="table__thead">
+                        <tr class="table__trthead">
+                            <th class="table__thead">Número de guía</th>
+                            <th class="table__thead">Origen</th>
+                            <th class="table__thead">Destino</th>
+                            <th class="table__thead">Destinatario</th>
+                            <th class="table__thead">Fecha de la última actualización</th>
+                            <th class="table__thead">Estado actual</th>
+                            
+                        </tr>
+                    </thead>
+                    <tbody class="table__tbody">
+                        <tr class="table__tr">
+                            <td class="table__tbodyTd">ejemplo1</td>
+                            <td class="table__tbodyTd">ejemplo2</td>
+                            <td class="table__tbodyTd">ejemplo3</td>
+                            <td class="table__tbodyTd">ejemplo4</td>
+                            <td class="table__tbodyTd">ejemplo5</td>
+                            <td class="table__tbodyTd">
+                                <select name="tablestatus" id="" class="table__tbodyTdStatus">
+                                    <option value="1" class="registroDeGuias__inputOption">Pendiente</option>
+                                    <option value="2" class="registroDeGuias__inputOption">En tránsito</option>
+                                    <option value="3" class="registroDeGuias__inputOption">Entregado</option>
+                                </select>
+                                <i class="table__tbodyTdDelete"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 16 16">
+                                    <path d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5m2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5m3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0z"/>
+                                    <path d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1zM4.118 4 4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4zM2.5 3h11V2h-11z"/>
+                                  </svg></i>
+                                <i class="table__tbodyTdHIstory"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 16 16">
+                                    <path d="M8.515 1.019A7 7 0 0 0 8 1V0a8 8 0 0 1 .589.022zm2.004.45a7 7 0 0 0-.985-.299l.219-.976q.576.129 1.126.342zm1.37.71a7 7 0 0 0-.439-.27l.493-.87a8 8 0 0 1 .979.654l-.615.789a7 7 0 0 0-.418-.302zm1.834 1.79a7 7 0 0 0-.653-.796l.724-.69q.406.429.747.91zm.744 1.352a7 7 0 0 0-.214-.468l.893-.45a8 8 0 0 1 .45 1.088l-.95.313a7 7 0 0 0-.179-.483m.53 2.507a7 7 0 0 0-.1-1.025l.985-.17q.1.58.116 1.17zm-.131 1.538q.05-.254.081-.51l.993.123a8 8 0 0 1-.23 1.155l-.964-.267q.069-.247.12-.501m-.952 2.379q.276-.436.486-.908l.914.405q-.24.54-.555 1.038zm-.964 1.205q.183-.183.35-.378l.758.653a8 8 0 0 1-.401.432z"/>
+                                    <path d="M8 1a7 7 0 1 0 4.95 11.95l.707.707A8.001 8.001 0 1 1 8 0z"/>
+                                    <path d="M7.5 3a.5.5 0 0 1 .5.5v5.21l3.248 1.856a.5.5 0 0 1-.496.868l-3.5-2A.5.5 0 0 1 7 9V3.5a.5.5 0 0 1 .5-.5"/>
+                                  </svg></i>
+                            </td>
+                        </tr>
+                    </tbody>
+
+                </table>
+                <button class="table__btn btn-normal">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-repeat" viewBox="0 0 16 16">
+                        <path d="M11.534 7h3.932a.25.25 0 0 1 .192.41l-1.966 2.36a.25.25 0 0 1-.384 0l-1.966-2.36a.25.25 0 0 1 .192-.41m-11 2h3.932a.25.25 0 0 0 .192-.41L2.692 6.23a.25.25 0 0 0-.384 0L.342 8.59A.25.25 0 0 0 .534 9"/>
+                        <path fill-rule="evenodd" d="M8 3c-1.552 0-2.94.707-3.857 1.818a.5.5 0 1 1-.771-.636A6.002 6.002 0 0 1 13.917 7H12.9A5 5 0 0 0 8 3M3.1 9a5.002 5.002 0 0 0 8.757 2.182.5.5 0 1 1 .771.636A6.002 6.002 0 0 1 2.083 9z"/>
+                      </svg>
+                </button>
+            </div>
+        </section>
+
+    </main>
+    <footer class="footer">
+        <div class="container">
+            <div class="footer__flex">
+                    <p class="footer__derechos">&copy; Todos los derechos reservados</p>
+                    <ul class="footer__redes">
+                        <a href="" class="footer__links">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" viewBox="0 0 16 16">
+                                <path d="M16 8.049c0-4.446-3.582-8.05-8-8.05C3.58 0-.002 3.603-.002 8.05c0 4.017 2.926 7.347 6.75 7.951v-5.625h-2.03V8.05H6.75V6.275c0-2.017 1.195-3.131 3.022-3.131.876 0 1.791.157 1.791.157v1.98h-1.009c-.993 0-1.303.621-1.303 1.258v1.51h2.218l-.354 2.326H9.25V16c3.824-.604 6.75-3.934 6.75-7.951"/>
+                            </svg>
+                        </a>
+                        <a href="" class="footer__links">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" viewBox="0 0 16 16">
+                                <path d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.9 3.9 0 0 0-1.417.923A3.9 3.9 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.9 3.9 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.9 3.9 0 0 0-.923-1.417A3.9 3.9 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 7.998 0zm-.717 1.442h.718c2.136 0 2.389.007 3.232.046.78.035 1.204.166 1.486.275.373.145.64.319.92.599s.453.546.598.92c.11.281.24.705.275 1.485.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.5 2.5 0 0 1-.599.919c-.28.28-.546.453-.92.598-.28.11-.704.24-1.485.276-.843.038-1.096.047-3.232.047s-2.39-.009-3.233-.047c-.78-.036-1.203-.166-1.485-.276a2.5 2.5 0 0 1-.92-.598 2.5 2.5 0 0 1-.6-.92c-.109-.281-.24-.705-.275-1.485-.038-.843-.046-1.096-.046-3.233s.008-2.388.046-3.231c.036-.78.166-1.204.276-1.486.145-.373.319-.64.599-.92s.546-.453.92-.598c.282-.11.705-.24 1.485-.276.738-.034 1.024-.044 2.515-.045zm4.988 1.328a.96.96 0 1 0 0 1.92.96.96 0 0 0 0-1.92m-4.27 1.122a4.109 4.109 0 1 0 0 8.217 4.109 4.109 0 0 0 0-8.217m0 1.441a2.667 2.667 0 1 1 0 5.334 2.667 2.667 0 0 1 0-5.334"/>
+                            </svg>
+                        </a>
+                        <a href="" class="footer__links">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 16 16">
+                                <path d="M9 0h1.98c.144.715.54 1.617 1.235 2.512C12.895 3.389 13.797 4 15 4v2c-1.753 0-3.07-.814-4-1.829V11a5 5 0 1 1-5-5v2a3 3 0 1 0 3 3z"/>
+                            </svg>
+                        </a>
+                    </ul>
+                    <ul class="footer__contactos">
+                        <a href="tel:656-3124567" class="footer__contacto"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 16 16">
+                            <path d="M3.654 1.328a.678.678 0 0 0-1.015-.063L1.605 2.3c-.483.484-.661 1.169-.45 1.77a17.6 17.6 0 0 0 4.168 6.608 17.6 17.6 0 0 0 6.608 4.168c.601.211 1.286.033 1.77-.45l1.034-1.034a.678.678 0 0 0-.063-1.015l-2.307-1.794a.68.68 0 0 0-.58-.122l-2.19.547a1.75 1.75 0 0 1-1.657-.459L5.482 8.062a1.75 1.75 0 0 1-.46-1.657l.548-2.19a.68.68 0 0 0-.122-.58zM1.884.511a1.745 1.745 0 0 1 2.612.163L6.29 2.98c.329.423.445.974.315 1.494l-.547 2.19a.68.68 0 0 0 .178.643l2.457 2.457a.68.68 0 0 0 .644.178l2.189-.547a1.75 1.75 0 0 1 1.494.315l2.306 1.794c.829.645.905 1.87.163 2.611l-1.034 1.034c-.74.74-1.846 1.065-2.877.702a18.6 18.6 0 0 1-7.01-4.42 18.6 18.6 0 0 1-4.42-7.009c-.362-1.03-.037-2.137.703-2.877z"/>
+                        </svg> 656-3124567
+                        </a>
+                        <a href="" class="footer__contacto">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 16 16">
+                                <path d="M11 1a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1zM5 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2z"/>
+                                <path d="M8 14a1 1 0 1 0 0-2 1 1 0 0 0 0 2"/>
+                            </svg>
+                            656-2345789
+                        </a>
+                        <a href="mailto:Hound_Express@mail.com" class="footer__contacto">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 16 16">
+                                <path d="M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2zm2-1a1 1 0 0 0-1 1v.217l7 4.2 7-4.2V4a1 1 0 0 0-1-1zm13 2.383-4.708 2.825L15 11.105zm-.034 6.876-5.64-3.471L8 9.583l-1.326-.795-5.64 3.47A1 1 0 0 0 2 13h12a1 1 0 0 0 .966-.741M1 11.105l4.708-2.897L1 5.383z"/>
+                            </svg>
+                            Hound_Express@mail.com
+                        
+                        </a>
+                </ul>
+            </div>
+        </div>
+    </footer>
+    
+</body>
+</html>
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,44 @@
+// Variables
+
+
+$fontFamili:"Open Sans",sans-serif;
+$azulClaroPacity:rgba(106, 198, 222,.2);
+$azulNoche:rgb(106, 198, 222);
+$bgBanner:url(../img/banner-5Dark.jpg);
+$azulClaro:rgb(16, 108, 255);
+// mixings
+@mixin fontsize($min, $ref, $max){
+    font-size: clamp($min,$ref,$max);
+}
+
+@mixin flex ($direction, $gap, $wrap){
+    display: flex;
+    flex-direction: $direction;
+    gap: $gap;
+    flex-wrap: $wrap;
+}
+
+@mixin grid($min, $rowGap, $colGap){
+    display: grid;
+    grid-template-columns: repeat(auto-fill,minmax($min,1fr));
+    row-gap: $rowGap;
+    column-gap: $colGap;
+}
+
+@mixin hover(){
+    @media(hover:hover){
+        @content;
+
+    }
+}
+
+@mixin media($media){
+    @media(max-width:$media){
+        @content;
+    }
+
+}
+
+
+
+
