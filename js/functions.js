@@ -34,6 +34,8 @@ function main(){
         
 
         input.forEach(Element => {
+            console.log(logElement(Element.id,Element.value));
+             
             if(Element.value == "" || Element.value == 0){
                 let mensaje = Element.previousElementSibling.lastElementChild
                 mensaje.innerText="Obligatorio"
@@ -58,6 +60,22 @@ function main(){
         if(validationValues.includes(false) == false){
             tableTempData.push(createObjeto(validationValues))
             form.reset()
+        }
+        function logElement(Name,Value){
+            switch (Name){
+                case ("Numero de Guia"):
+                    return tableData;
+                case("origen"):
+                    return "origen";
+                case("destino"):
+                    return "destino";
+                case("destinatario"):
+                    return "destinatario";
+                case("fecha De Creacion"):
+                    return "Fecha de creacion";
+                case("estado inicial"):
+                    return "Estado inicial";
+            }
         }
 
     })
