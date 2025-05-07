@@ -8,6 +8,7 @@ function main(){
     let tableData = []
     const refreshTable = document.querySelector(".table__btn")
     const companyStatus = document.querySelectorAll(".generalStatus__cartNumber")
+
     
     hamIcon.addEventListener("click",()=>{
         const hiddenMenu = document.querySelector(".header__ul")
@@ -35,7 +36,6 @@ function main(){
         input.forEach(Element => {
             if(Element.value == "" || Element.value == 0){
                 let mensaje = Element.previousElementSibling.lastElementChild
-                console.log(Element.value)
                 mensaje.innerText="Obligatorio"
                 mensaje.classList.remove("correct")
                 mensaje.classList.add("error")
@@ -43,7 +43,7 @@ function main(){
             }else{
                 let mensaje = Element.previousElementSibling.lastElementChild
                 const type = Element.getAttribute("name")
-                mensaje.innerText="&#9786;"
+                mensaje.innerHTML="&#9786;"
                 mensaje.classList.remove("error")
                 mensaje.classList.add("correct")
                 if(type == "estado inicial"){
@@ -56,7 +56,7 @@ function main(){
 
         })
         if(validationValues.includes(false) == false){
-            tableTempData.push(validationValues)
+            tableTempData.push(createObjeto(validationValues))
             form.reset()
         }
 
@@ -72,25 +72,63 @@ function main(){
                 tableData.push(Element)
             })
             tableTempData=[]
-            refreshCouters(tableData)
+            refreshCouters(tableData)   
+            
         }
     })
 
 
     function createTabla(data){
-
         const tableBody = document.querySelector(".table__tbody")
-        const generalStatus = document.querySelectorAll(".generalStatus__cartNumber")
+        function addActionsToCell(val,url,type){
+            const icon = document.createElement("i")
+            const img = document.createElement("img")
+            icon.classList.add("table__tbodyTdDelete")
+            icon.id=val
+            img.setAttribute("src",url)
+            icon.appendChild(img)
+            if(type === "delete"){
+                icon.addEventListener("click",()=>{
+                    console.log('tamoaqui');
+                })
+            }else if(type === "history"){
+                icon.addEventListener("click",()=>{
+                    console.log('history');
+                })
+            }else if(type === "edit"){
+                icon.addEventListener("click",()=>{
+                    console.log('edit');
+                })
+            }else{
+                console.log('no entro en ningun caso');
+                
+            }
+            return icon
+
+        }
+
+        function createCell(valor,withActions=false){
+            const cel = document.createElement("td")
+            
+            cel.classList.add("table__tbodyTd")
+            if(withActions){
+                cel.appendChild(addActionsToCell(valor,"/img/history.svg","history"))
+                cel.appendChild(addActionsToCell(valor,"img/trash.svg","delete"))
+                cel.appendChild(addActionsToCell(valor,"img/edit.svg","edit"))
+            }else{cel.innerText = valor}
+            return cel
+        }
         data.forEach(Element=>{
             const row = document.createElement("tr")
             row.classList.add("table__tr")
-            for(i of Element){
-                const cel = document.createElement("td")
-                cel.classList.add("table__tbodyTd")
-                cel.innerText = i
-                row.appendChild(cel)
-                
-            }
+            row.classList.add(Element.guia)
+            row.appendChild(createCell(Element.guia))
+            row.appendChild(createCell(Element.origin))
+            row.appendChild(createCell(Element.destino))
+            row.appendChild(createCell(Element.destinatario))
+            row.appendChild(createCell(Element.fecha))
+            row.appendChild(createCell(Element.status))
+            row.appendChild(createCell(Element.guia,true))
             tableBody.appendChild(row)
         })
 
@@ -100,11 +138,11 @@ function main(){
         let transitCounter = 0
         let completeCounter = 0
         data.forEach(Element=>{
-            if(Element[5] == "Pendiente"){
+            if(Element.status[0] == "Pendiente"){
                 pendienteCounter ++
-            }else if(Element[5] == "En tránsito"){
+            }else if(Element.status[0] == "En tránsito"){
                 transitCounter ++
-            }else if(Element[5] == "Entregado"){
+            }else if(Element.status[0] == "Entregado"){
                 completeCounter ++
             }
         })
@@ -112,9 +150,24 @@ function main(){
         companyStatus[1].innerText = transitCounter
         companyStatus[2].innerText = completeCounter
     }
-    const guiaStatus =document.querySelector(".table__tbodyTdStatus")
-    guiaStatus.addEventListener("change",()=>{
-        console.log("tamoaqui")
-    })
+    function createObjeto(Data){
+        let controlObjeto = {
+            guia:"",
+            origin:"",
+            destino:"",
+            destinatario:"",
+            fecha:"",
+            status:[],
+        }
+        controlObjeto.guia=Data[0]
+        controlObjeto.origin=Data[1]
+        controlObjeto.destino=Data[2]
+        controlObjeto.destinatario=Data[3]
+        controlObjeto.fecha=Data[4]
+        controlObjeto.status.push(Data[5])
+        
+        return controlObjeto
+    }
+
 
 }
