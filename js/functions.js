@@ -63,7 +63,7 @@ function main(){
         }
         function logElement(Name,Value){
             switch (Name){
-                case ("Numero de Guia"):
+                case ("Numero de Guiags"):
                     return tableData;
                 case("origen"):
                     return "origen";
