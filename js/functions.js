@@ -36,7 +36,6 @@ function main(){
         input.forEach(Element => {
             const validationInputs = validation(Element.id,Element.value)
             if(validationInputs[0]){
-                console.log(validationInputs[1]);
                 let mensaje = Element.previousElementSibling.lastElementChild
                 const type = Element.getAttribute("name")
                 mensaje.innerHTML=validationInputs[1]
@@ -47,13 +46,12 @@ function main(){
                 }else{
                     validationValues.push(Element.value)
                 }
-                
             }else{
                 let mensaje = Element.previousElementSibling.lastElementChild
                 mensaje.innerText=validationInputs[1]
                 mensaje.classList.remove("correct")
                 mensaje.classList.add("error")
-                validationValues.push(false)//hasta aqui
+                validationValues.push(false)
             }
             
         })
@@ -122,12 +120,22 @@ function main(){
             const icon = document.createElement("i")
             const img = document.createElement("img")
             icon.classList.add("table__tbodyTdDelete")
-            icon.id=val
             img.setAttribute("src",url)
+            img.id=val
             icon.appendChild(img)
             if(type === "delete"){
-                icon.addEventListener("click",()=>{
-                    console.log('tamoaqui');
+                icon.addEventListener("click",(e)=>{
+                    console.log(e.target.id);
+                    const rowToDelete = document.getElementById(e.target.id)
+                    console.log(rowToDelete);
+                    if(confirm("Estas seguro de eliminar este registro?")){
+                        for(i of tableData){
+                            if(i.guia == e.target.id){
+                                tableData.pop(i)
+                            }
+                        }
+                        rowToDelete.remove()
+                    }
                 })
             }else if(type === "history"){
                 icon.addEventListener("click",()=>{
@@ -159,7 +167,7 @@ function main(){
         data.forEach(Element=>{
             const row = document.createElement("tr")
             row.classList.add("table__tr")
-            row.classList.add(Element.guia)
+            row.id=Element.guia
             row.appendChild(createCell(Element.guia))
             row.appendChild(createCell(Element.origin))
             row.appendChild(createCell(Element.destino))
