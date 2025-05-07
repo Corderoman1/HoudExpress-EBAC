@@ -34,18 +34,12 @@ function main(){
         
 
         input.forEach(Element => {
-            console.log(logElement(Element.id,Element.value));
-             
-            if(Element.value == "" || Element.value == 0){
-                let mensaje = Element.previousElementSibling.lastElementChild
-                mensaje.innerText="Obligatorio"
-                mensaje.classList.remove("correct")
-                mensaje.classList.add("error")
-                validationValues.push(false)
-            }else{
+            const validationInputs = validation(Element.id,Element.value)
+            if(validationInputs[0]){
+                console.log(validationInputs[1]);
                 let mensaje = Element.previousElementSibling.lastElementChild
                 const type = Element.getAttribute("name")
-                mensaje.innerHTML="&#9786;"
+                mensaje.innerHTML=validationInputs[1]
                 mensaje.classList.remove("error")
                 mensaje.classList.add("correct")
                 if(type == "estado inicial"){
@@ -53,31 +47,57 @@ function main(){
                 }else{
                     validationValues.push(Element.value)
                 }
+                
+            }else{
+                let mensaje = Element.previousElementSibling.lastElementChild
+                mensaje.innerText=validationInputs[1]
+                mensaje.classList.remove("correct")
+                mensaje.classList.add("error")
+                validationValues.push(false)//hasta aqui
             }
-
-
+            
         })
         if(validationValues.includes(false) == false){
             tableTempData.push(createObjeto(validationValues))
             form.reset()
         }
-        function logElement(Name,Value){
-            switch (Name){
-                case ("Numero de Guiags"):
-                    return tableData;
-                case("origen"):
-                    return "origen";
-                case("destino"):
-                    return "destino";
-                case("destinatario"):
-                    return "destinatario";
-                case("fecha De Creacion"):
-                    return "Fecha de creacion";
-                case("estado inicial"):
-                    return "Estado inicial";
+        function validation(Name,Value){
+            if(Name == "Numero de Guia"){
+                return valGuideNumber(Value)
+            }else{
+                return valEmpty(Value);
             }
         }
+        function valGuideNumber(Value){
+            const validVal = /^([0-9])/;
+            if(Value.length < 1 ){
+                return [false,"Obligatorio"]
+            }else if(Value.length !== 10){
+                return [false,"Formato No Valido"]
+            }else if(!validVal.test(parseInt(Value))){
+                return [false,"Este Campo no puede llevar letras"]
+            }else{
+                for(i of tableData){
+                   if(i.guia == Value){
+                    return [false,"Este numero ya esta registrado"]
+                   }     
+                }
+                for(i of tableTempData){
+                    if(i.guia == Value){
+                     return [false,"Este numero ya esta registrado"]
+                    }     
+                 }
+                return [true,'Correct']
+            }
 
+        }
+        function valEmpty(Value){
+            if(Value.length<1 || Value == 0){
+                return [false,"Obligatorio"]
+            }else{
+                return [true,'Correct']
+            }
+        }
     })
 
 
