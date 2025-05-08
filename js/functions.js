@@ -8,6 +8,7 @@ function main(){
     let tableData = []
     const refreshTable = document.querySelector(".table__btn")
     const companyStatus = document.querySelectorAll(".generalStatus__cartNumber")
+    const submitUpgrade = document.querySelector(".formModal__inputSubmit")
 
     
     hamIcon.addEventListener("click",()=>{
@@ -141,8 +142,26 @@ function main(){
                     console.log('history');
                 })
             }else if(type === "edit"){
-                icon.addEventListener("click",()=>{
-                    console.log('edit');
+                icon.addEventListener("click",(e)=>{
+                    const modal = document.querySelector(".formModal")
+                    const modalTitle = document.querySelector(".formModal__title")
+                    const options = document.querySelectorAll(".formModal__inputOption")
+                    const submitModal = document.querySelector(".formModal__inputSubmit")
+                    modal.classList.add("formModal--show")
+                    modalTitle.innerText=`Editar registro: ${e.target.id}`
+                    submitModal.id=e.target.id
+                    for(i of tableData){
+                        if(i.guia == e.target.id){
+                            console.log(i.status[0])
+                            if(i.status[0] == "Pendiente"){
+                                options[1].setAttribute('selected',true)
+                            }else if(i.status[0] == "En tránsito"){
+                                options[2].setAttribute('selected',true)
+                            }else if(i.status[0] == "Entregado"){
+                                options[3].setAttribute('selected',true)
+                            }
+                        }
+                    }
                 })
             }else{
                 console.log('no entro en ningun caso');
@@ -172,7 +191,7 @@ function main(){
             row.appendChild(createCell(Element.destino))
             row.appendChild(createCell(Element.destinatario))
             row.appendChild(createCell(Element.fecha))
-            row.appendChild(createCell(Element.status))
+            row.appendChild(createCell(Element.status[0]))
             row.appendChild(createCell(Element.guia,true))
             tableBody.appendChild(row)
         })
@@ -213,6 +232,48 @@ function main(){
         
         return controlObjeto
     }
+
+    submitUpgrade.addEventListener("click",(e)=>{
+        e.preventDefault()
+        const options = document.querySelectorAll(".formModal__inputOption")
+        const inputVal = document.querySelector(".formModal__inputSelect")
+        const modal = document.querySelector(".formModal")
+        const guia = e.target.id
+        const date = new Date
+        let optionsToadd = []
+        options.forEach(Element=>{
+            optionsToadd.push(Element.innerText)
+           
+            
+        })
+        console.log(optionsToadd[1]);
+        if(inputVal.value == 1){
+            for(i of tableData){
+                if(i.guia == guia){
+                    i.status.unshift(optionsToadd[1])
+                    i.fecha.unshift(date.toString)
+                }
+            }
+        }else if(inputVal.value == 2){
+            for(i of tableData){
+                if(i.guia == guia){
+                    i.status.unshift(optionsToadd[2])
+                    i.fecha.unshift(date.toString)
+                }
+            }
+        }else if(inputVal.value == 3){
+            for(i of tableData){
+                if(i.guia == guia){
+                    i.status.unshift(optionsToadd[2])
+                    i.fecha.unshift(date.toString)
+                }
+            }
+        }
+        e.target.id=""
+        createTabla(tableData)
+        modal.classList.remove("formModal--show")
+
+    })
 
 
 }
