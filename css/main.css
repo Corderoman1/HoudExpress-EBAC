@@ -365,6 +365,51 @@ body a {
   color: #fff;
 }
 
+.formModal {
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  background-color: rgba(17, 17, 17, 0.3803921569);
+  display: none;
+}
+.formModal--show {
+  display: flex;
+  flex-direction: row;
+  gap: 40px;
+  flex-wrap: wrap;
+}
+.formModal__container {
+  background-color: #fff;
+  max-width: 600px;
+  width: 90%;
+  margin: auto;
+  text-align: center;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  flex-wrap: wrap;
+  padding: 20px;
+  box-sizing: border-box;
+}
+.formModal__form {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.formModal__inputSelect {
+  display: block;
+  width: 100%;
+}
+.formModal__inputSubmit {
+  display: block;
+  margin: 0 auto;
+}
+
 .container {
   max-width: 1200px;
   width: 95%;

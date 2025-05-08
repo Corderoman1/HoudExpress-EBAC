@@ -332,3 +332,42 @@ body{
         color: #fff;
     }
 }
+.formModal{
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    background-color: #11111161;  
+    display: none;
+    &--show{
+        @include flex (row, 40px, wrap);
+        
+    }
+    &__container{
+        background-color: #fff;
+        max-width: 600px;
+        width: 90%;
+        margin: auto;
+        text-align: center;
+        border-radius: 10px;
+        @include flex (column, 40px, wrap);
+        padding: 20px;
+        box-sizing: border-box;
+        
+    }
+    &__form{
+        @include flex (column, 40px, wrap);
+        justify-content: center;
+        
+    }
+    &__inputSelect{
+        display: block;
+        width: 100%;
+
+    }
+    &__inputSubmit{
+        display: block;
+        margin: 0 auto;
+    }
+}

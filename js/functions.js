@@ -125,9 +125,7 @@ function main(){
             icon.appendChild(img)
             if(type === "delete"){
                 icon.addEventListener("click",(e)=>{
-                    console.log(e.target.id);
                     const rowToDelete = document.getElementById(e.target.id)
-                    console.log(rowToDelete);
                     if(confirm("Estas seguro de eliminar este registro?")){
                         for(i of tableData){
                             if(i.guia == e.target.id){
@@ -135,6 +133,7 @@ function main(){
                             }
                         }
                         rowToDelete.remove()
+                        icon.removeEventListener
                     }
                 })
             }else if(type === "history"){
@@ -202,14 +201,14 @@ function main(){
             origin:"",
             destino:"",
             destinatario:"",
-            fecha:"",
+            fecha:[],
             status:[],
         }
         controlObjeto.guia=Data[0]
         controlObjeto.origin=Data[1]
         controlObjeto.destino=Data[2]
         controlObjeto.destinatario=Data[3]
-        controlObjeto.fecha=Data[4]
+        controlObjeto.fecha.push(Data[4])
         controlObjeto.status.push(Data[5])
         
         return controlObjeto
