@@ -152,7 +152,6 @@ function main(){
                     submitModal.id=e.target.id
                     for(i of tableData){
                         if(i.guia == e.target.id){
-                            console.log(i.status[0])
                             if(i.status[0] == "Pendiente"){
                                 options[1].setAttribute('selected',true)
                             }else if(i.status[0] == "En tránsito"){
@@ -190,7 +189,7 @@ function main(){
             row.appendChild(createCell(Element.origin))
             row.appendChild(createCell(Element.destino))
             row.appendChild(createCell(Element.destinatario))
-            row.appendChild(createCell(Element.fecha))
+            row.appendChild(createCell(Element.fecha[0]))
             row.appendChild(createCell(Element.status[0]))
             row.appendChild(createCell(Element.guia,true))
             tableBody.appendChild(row)
@@ -201,6 +200,8 @@ function main(){
         let pendienteCounter = 0
         let transitCounter = 0
         let completeCounter = 0
+        
+        
         data.forEach(Element=>{
             if(Element.status[0] == "Pendiente"){
                 pendienteCounter ++
@@ -240,13 +241,14 @@ function main(){
         const modal = document.querySelector(".formModal")
         const guia = e.target.id
         const date = new Date
+
+        
         let optionsToadd = []
         options.forEach(Element=>{
             optionsToadd.push(Element.innerText)
            
             
         })
-        console.log(optionsToadd[1]);
         if(inputVal.value == 1){
             for(i of tableData){
                 if(i.guia == guia){
@@ -264,16 +266,28 @@ function main(){
         }else if(inputVal.value == 3){
             for(i of tableData){
                 if(i.guia == guia){
-                    i.status.unshift(optionsToadd[2])
-                    i.fecha.unshift(date.toString)
+                    i.status.unshift(optionsToadd[3])
+                    i.fecha.unshift(date.toString())
                 }
             }
         }
+        upgradeTable(e.target.id)
+        refreshCouters(tableData)
         e.target.id=""
-        createTabla(tableData)
+
         modal.classList.remove("formModal--show")
 
     })
+    function upgradeTable(guia){
+        const row = document.getElementById(guia)
+        const cell = row.querySelectorAll(".table__tbodyTd")
+        for(i of tableData){
+            if(i.guia == guia){
+                cell[4].innerText = i.fecha[0]
+                cell[5].innerText = i.status[0]
+            }
+        }
+    }
 
 
 }
