@@ -44,6 +44,13 @@ function main(){
                 mensaje.classList.add("correct")
                 if(type == "estado inicial"){
                     validationValues.push(options[Element.value])
+                }else if(type == "fecha De Creacion"){
+                    const date = new Date(Element.value)
+                    const day = String(date.getDate() + 1);
+                    const month = String(date.getMonth() + 1);
+                    const year = date.getFullYear();
+                    const formatedDate = `${month}/${day}/${year}`;
+                    validationValues.push(formatedDate)
                 }else{
                     validationValues.push(Element.value)
                 }
@@ -133,8 +140,11 @@ function main(){
                                 tableData.pop(i)
                             }
                         }
+                        
+                        refreshCouters(tableData)
                         rowToDelete.remove()
                         icon.removeEventListener
+
                     }
                 })
             }else if(type === "history"){
@@ -166,7 +176,7 @@ function main(){
                         historyModalFecha.classList.add("historyModal__date")
                         historyModalStatus.classList.add("historyModal__status")
                         historyModalFecha.innerText = `Fecha:${guia.fecha[i]}`
-                        historyModalStatus.innerText = `Fecha:${guia.status[i]}`
+                        historyModalStatus.innerText = `Status:${guia.status[i]}`
                         historyModalContainer.appendChild(historyModalFecha)
                         historyModalContainer.appendChild(historyModalStatus)
                     }
@@ -203,9 +213,6 @@ function main(){
                         }
                     }
                 })
-            }else{
-                console.log('no entro en ningun caso');
-                
             }
             return icon
 
