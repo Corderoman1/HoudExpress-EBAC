@@ -410,6 +410,51 @@ body a {
   margin: 0 auto;
 }
 
+.historyModal {
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  background-color: rgba(17, 17, 17, 0.3803921569);
+  display: none;
+}
+.historyModal--show {
+  display: flex;
+  flex-direction: row;
+  gap: 40px;
+  flex-wrap: wrap;
+}
+.historyModal__container {
+  background-color: #fff;
+  max-width: 600px;
+  width: 90%;
+  margin: auto;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  flex-wrap: nowrap;
+  padding: 20px;
+  box-sizing: border-box;
+  max-height: 100vh;
+  overflow: auto;
+}
+.historyModal__title {
+  font-size: 18px;
+  text-align: center;
+}
+.historyModal__date {
+  font-size: 16px;
+  font-weight: 900;
+}
+.historyModal__status::before {
+  content: "-----";
+}
+.historyModal__OkButtom {
+  margin: 0 auto;
+}
+
 .container {
   max-width: 1200px;
   width: 95%;

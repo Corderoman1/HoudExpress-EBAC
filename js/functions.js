@@ -138,9 +138,50 @@ function main(){
                     }
                 })
             }else if(type === "history"){
-                icon.addEventListener("click",()=>{
-                    console.log('history');
+                icon.addEventListener("click",(e)=>{
+                    for(i of tableData){
+                        if(i.guia == e.target.id){
+                            createHistoryModal(i)
+                        }
+                    }
                 })
+                function createHistoryModal(guia){
+                   
+                    const body = document.querySelector(".body")
+                    const historyModal = document.createElement("section")
+                    const historyModalContainer = document.createElement("div")
+                    const historyModalTitle = document.createElement("h2")
+                    const closeHistoryModal = document.createElement("button")
+                    historyModal.classList.add("historyModal")
+                    historyModal.classList.add("historyModal--show")
+                    historyModalContainer.classList.add("historyModal__container")
+                    historyModalTitle.classList.add("historyModal__title")
+                    historyModalTitle.innerText = `Historial del Numero de guia:${guia.guia}`
+                    historyModal.appendChild(historyModalContainer)
+                    historyModalContainer.appendChild(historyModalTitle)
+
+                    for(let i=0;i<guia.fecha.length;i++){
+                        const historyModalFecha = document.createElement("p")
+                        const historyModalStatus = document.createElement("p")
+                        historyModalFecha.classList.add("historyModal__date")
+                        historyModalStatus.classList.add("historyModal__status")
+                        historyModalFecha.innerText = `Fecha:${guia.fecha[i]}`
+                        historyModalStatus.innerText = `Fecha:${guia.status[i]}`
+                        historyModalContainer.appendChild(historyModalFecha)
+                        historyModalContainer.appendChild(historyModalStatus)
+                    }
+                    closeHistoryModal.classList.add("historyModal__OkButtom")
+                    closeHistoryModal.classList.add("btn-normal")
+                    closeHistoryModal.innerText = "OK"
+                    historyModalContainer.appendChild(closeHistoryModal)
+                    body.appendChild(historyModal)
+                    closeHistoryModal.addEventListener("click",(e)=>{
+                        const historyModal = document.querySelector(".historyModal")
+                        historyModal.remove()
+                        e.removeEventListener
+                    })
+                
+                }
             }else if(type === "edit"){
                 icon.addEventListener("click",(e)=>{
                     const modal = document.querySelector(".formModal")
@@ -240,34 +281,30 @@ function main(){
         const inputVal = document.querySelector(".formModal__inputSelect")
         const modal = document.querySelector(".formModal")
         const guia = e.target.id
-        const date = new Date
-
-        
+        const date = new Date().toLocaleDateString()
         let optionsToadd = []
         options.forEach(Element=>{
             optionsToadd.push(Element.innerText)
-           
-            
         })
         if(inputVal.value == 1){
             for(i of tableData){
                 if(i.guia == guia){
                     i.status.unshift(optionsToadd[1])
-                    i.fecha.unshift(date.toString)
+                    i.fecha.unshift(date)
                 }
             }
         }else if(inputVal.value == 2){
             for(i of tableData){
                 if(i.guia == guia){
                     i.status.unshift(optionsToadd[2])
-                    i.fecha.unshift(date.toString)
+                    i.fecha.unshift(date)
                 }
             }
         }else if(inputVal.value == 3){
             for(i of tableData){
                 if(i.guia == guia){
                     i.status.unshift(optionsToadd[3])
-                    i.fecha.unshift(date.toString())
+                    i.fecha.unshift(date)
                 }
             }
         }
@@ -288,6 +325,7 @@ function main(){
             }
         }
     }
+
 
 
 }

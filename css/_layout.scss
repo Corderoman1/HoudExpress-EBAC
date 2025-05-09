@@ -371,3 +371,47 @@ body{
         margin: 0 auto;
     }
 }
+.historyModal{
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    background-color: #11111161;  
+    display: none;
+    &--show{
+        @include flex (row, 40px, wrap);
+        
+    }
+    &__container{
+        background-color: #fff;
+        max-width: 600px;
+        width: 90%;
+        margin: auto;
+        border-radius: 10px;
+        @include flex (column, 40px, nowrap);
+        padding: 20px;
+        box-sizing: border-box;
+        max-height: 100vh;
+        overflow: auto;
+        
+    }
+    &__title{
+        font-size: 18px;
+        text-align: center;
+    }
+    &__date{
+        font-size: 16px;
+        font-weight: 900;
+    }
+    &__status{
+        &::before{
+            content: "-----";
+        }
+    }
+
+    &__OkButtom{
+        margin: 0 auto;
+    }
+
+}
