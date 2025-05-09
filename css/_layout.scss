@@ -232,7 +232,9 @@ body{
     box-sizing: border-box;
     border: 1px solid #0066ff00;
 }
-
+.tableGuides{
+    overflow: auto;
+}
 .table{
     width: 100%;
     margin-top: 50px;
