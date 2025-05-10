@@ -223,7 +223,7 @@ function main(){
             
             cel.classList.add("table__tbodyTd")
             if(withActions){
-                cel.appendChild(addActionsToCell(valor,"/img/history.svg","history"))
+                cel.appendChild(addActionsToCell(valor,"img/history.svg","history"))
                 cel.appendChild(addActionsToCell(valor,"img/trash.svg","delete"))
                 cel.appendChild(addActionsToCell(valor,"img/edit.svg","edit"))
             }else{cel.innerText = valor}
